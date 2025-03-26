@@ -63,11 +63,12 @@
 - Traces: Data that shows the flow of requests through various services and components.
 
 ## Why Observability is important??
-Suppose you are hosting an application in your vpc on k8s cluster in AWS. If you want new potential customer for your company
-what are you going to show them??
-You show them the service level Agreement(SLA) and provide objectives to them.
--- 99.9% available
--- Out of 10,000 API requests, 99,995 requests are succesful(i.e only 5 failed).and show 200(https sucess code).
+Suppose you are hosting an application in your VPC on a K8s cluster in AWS. If you want new potential customers for your company,  
+what are you going to show them??  
+You show them the Service Level Agreement (SLA) and provide objectives to them.  
+
+-- 99.9% available  
+-- Out of 10,000 API requests, 9,995 requests are successful (i.e., only 5 failed) and show 200 (HTTP success code).
 
 ## Who is resposible for observability? (Developer/ DevOps engineer)
 So, it is a collective effort btw both developers and devops engineers.
