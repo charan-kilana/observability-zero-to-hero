@@ -6,6 +6,19 @@ Metrics are measurements or data points that tell you what is happening. For exa
 
 Monitoring is the process of keeping an eye on these metrics over time to understand what’s normal, identify changes, and detect problems. It's like watching your step count daily to see if you're meeting your fitness goal or checking your heart rate to make sure it's in a healthy range.
 
+## Metrics
+Suppose you deploy an application on k8s cluster in AWS. To get metrics you get  
+-- CPU of nodes  
+-- Memoryy of nodes
+-- pods status  
+-- Deploy Status  
+-- Deploy replicas(No of nodes)  
+-- HTTP Requests(No of requests recieved)  
+-- Total users signed in (at what time??)  
+Now we collected metrics, with push/pull-(scraping) mechanism we'll visualize with monitoring system(grafana).  
+Then we create a alert (ex: send a message on slack when users reached a target num, send a alert in mail when cpu utilization is reached max)  
+
+
 ## 🚀 Prometheus
 - Prometheus is an open-source systems monitoring and alerting toolkit originally built at SoundCloud.
 - It is known for its robust data model, powerful query language (PromQL), and the ability to generate alerts based on the collected time-series data.
