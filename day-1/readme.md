@@ -62,6 +62,19 @@
 - Metrics: Quantitative data points like CPU load, memory consumption, and request counts.
 - Traces: Data that shows the flow of requests through various services and components.
 
+## Why Observability is important??
+Suppose you are hosting an application in your vpc on k8s cluster in AWS. If you want new potential customer for your company
+what are you going to show them??
+You show them the service level Agreement(SLA) and provide objectives to them.
+--> 99.9% available
+--> Out of 10,000 API requests, 99,995 requests are succesful(i.e only 5 failed).and show 200(https sucess code).
+
+Now comes the observability!
+How do you implement?
+Setup observability, if 3 requests failed you look them in metrics
+you see why they are failed in logs, and finally look for how to fix/debug them in traces.
+If you dont fix them you wont meet the SLA, then 3 becomes 5, then 10. so finally Agreement is failed.
+
 ## 🆚 Monitoring on Bare-Metal Servers vs. Monitoring Kubernetes
 - Bare-Metal Servers:
     - Direct Access: Easier access to hardware metrics and logs.
