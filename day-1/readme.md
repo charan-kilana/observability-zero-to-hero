@@ -66,8 +66,13 @@
 Suppose you are hosting an application in your vpc on k8s cluster in AWS. If you want new potential customer for your company
 what are you going to show them??
 You show them the service level Agreement(SLA) and provide objectives to them.
---> 99.9% available
---> Out of 10,000 API requests, 99,995 requests are succesful(i.e only 5 failed).and show 200(https sucess code).
+-- 99.9% available
+-- Out of 10,000 API requests, 99,995 requests are succesful(i.e only 5 failed).and show 200(https sucess code).
+
+## Who is resposible for observability? (Developer/ DevOps engineer)
+So, it is a collective effort btw both developers and devops engineers.
+The developers will instrument the metrics, logs, traces using tool like **Open Telemetry**. Whereas devops/SRE engineer will
+setup or install **Prometheus(metrics), ELK(Logs) and Jaeger(Traces).**
 
 Now comes the observability!
 How do you implement?
