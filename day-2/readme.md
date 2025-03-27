@@ -161,6 +161,26 @@ kubectl port-forward service/monitoring-grafana -n monitoring 8080:80
 kubectl port-forward service/alertmanager-operated -n monitoring 9093:9093
 ```
 
+# Monitoring Setup for Kubernetes
+
+This setup includes **Node Exporter**, **Kube-State Metrics**, and **Metrics Server** for monitoring Kubernetes clusters.
+
+### **Node Exporter**
+- **What is it?**: A Prometheus exporter that exposes hardware and OS-level metrics from nodes (e.g., CPU, memory, disk usage, network stats).
+- **Use Case**: Monitors node health and resource usage.
+- **Installation**: Installed via Helm as a DaemonSet on each node.
+
+### **Kube-State Metrics**
+- **What is it?**: An application that exposes metrics about the state of Kubernetes objects (e.g., pods, deployments, replica sets).
+- **Use Case**: Monitors Kubernetes resource status and health (e.g., pods running, deployments scaling).
+- **Installation**: Installed via Helm as a Deployment.
+
+### **Metrics Server**
+- **What is it?**: A cluster-wide aggregator of CPU and memory usage data, providing real-time metrics for Kubernetes resources.
+- **Use Case**: Used for auto-scaling (Horizontal Pod Autoscaler) and real-time resource monitoring.
+- **Installation**: Installed via Helm as a Deployment.
+
+
 ### 🧼 Step 5: Clean UP
 - **Uninstall helm chart**:
 ```bash
