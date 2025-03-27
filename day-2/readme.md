@@ -89,8 +89,7 @@ sudo mv /tmp/eksctl /usr/local/bin/
 export PATH=$PATH:/usr/local/bin
 echo 'export PATH=$PATH:/usr/local/bin' >> ~/.bashrc
 source ~/.bashrc
-
-
+```
 
 ```bash
 eksctl create cluster --name=observability \
