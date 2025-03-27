@@ -78,6 +78,19 @@ Then we create a alert (ex: send a message on slack when users reached a target 
 - Install and configure eksctl using the steps mentioned [here]("https://eksctl.io/installation/").
 - Install and configure kubectl as mentioned [here]("https://kubernetes.io/docs/tasks/tools/").
 
+## Install eksctl
+
+Run the following commands to install eksctl:
+
+```bash
+curl -sSL "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_Linux_amd64.tar.gz" | tar -xz -C /tmp
+sudo mv /tmp/eksctl /usr/local/bin/
+/usr/local/bin/eksctl version
+export PATH=$PATH:/usr/local/bin
+echo 'export PATH=$PATH:/usr/local/bin' >> ~/.bashrc
+source ~/.bashrc
+
+
 
 ```bash
 eksctl create cluster --name=observability \
