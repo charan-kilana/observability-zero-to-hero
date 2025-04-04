@@ -189,7 +189,8 @@ This setup includes **Node Exporter**, **Kube-State Metrics**, and **Metrics Ser
 - **Use Case**: Monitors Kubernetes resource status and health (e.g., pods running, deployments scaling).
 - **Installation**: Installed via Helm as a Deployment.
 
-### **Metrics Server**
+### **Metrics Server/ Custom Metrics Server**
+- called Instrumentation of Metrics
 - **What is it?**: A cluster-wide aggregator of CPU and memory usage data, providing real-time metrics for Kubernetes resources.
 - **Use Case**: Used for auto-scaling (Horizontal Pod Autoscaler) and real-time resource monitoring.
 - **Installation**: Installed via Helm as a Deployment.
