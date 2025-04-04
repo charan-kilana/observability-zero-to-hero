@@ -83,12 +83,17 @@ Then we create a alert (ex: send a message on slack when users reached a target 
 Run the following commands to install eksctl:
 
 ```bash
-curl -sSL "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_Linux_amd64.tar.gz" | tar -xz -C /tmp
+RCH=amd64
+PLATFORM=$(uname -s)_$ARCH
+curl -sLO "https://github.com/eksctl-io/eksctl/releases/latest/download/eksctl_$PLATFORM.tar.gz"
+curl -sL "https://github.com/eksctl-io/eksctl/releases/latest/download/eksctl_checksums.txt" | grep $PLATFORM | sha256sum --check
+tar -xzf eksctl_$PLATFORM.tar.gz -C /tmp
 sudo mv /tmp/eksctl /usr/local/bin/
 /usr/local/bin/eksctl version
 export PATH=$PATH:/usr/local/bin
 echo 'export PATH=$PATH:/usr/local/bin' >> ~/.bashrc
 source ~/.bashrc
+eksctl version
 ```
 
 ```bash
