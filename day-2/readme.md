@@ -96,6 +96,14 @@ source ~/.bashrc
 eksctl version
 ```
 
+
+Why Use OIDC in a Kubernetes Cluster?
+OIDC (OpenID Connect) is an authentication protocol that allows Kubernetes to integrate with external identity providers like AWS IAM, Google, Okta, Keycloak, and Azure AD. Here’s why OIDC is useful in a Kubernetes cluster:  
+
+1. Secure Authentication for Users and Applications
+Kubernetes itself does not have a built-in identity system; it relies on external authentication providers.  
+  
+OIDC allows you to authenticate users using an external Identity Provider (IdP) instead of manually managing users in Kubernetes.  
 ```bash
 eksctl create cluster --name=observability \
                       --region=us-east-1 \
