@@ -182,6 +182,7 @@ This setup includes **Node Exporter**, **Kube-State Metrics**, and **Metrics Ser
 - **What is it?**: A Prometheus exporter that exposes hardware and OS-level metrics from nodes (e.g., CPU, memory, disk usage, network stats).
 - **Use Case**: Monitors node health and resource usage.
 - **Installation**: Installed via Helm as a DaemonSet on each node.
+- Communicates with virtual machine or nodes and reads the system files of the nodes where cpu, memory info are recorded.
 
 ### **Kube-State Metrics**
 - **What is it?**: An application that exposes metrics about the state of Kubernetes objects (e.g., pods, deployments, replica sets).
@@ -192,7 +193,16 @@ This setup includes **Node Exporter**, **Kube-State Metrics**, and **Metrics Ser
 - **What is it?**: A cluster-wide aggregator of CPU and memory usage data, providing real-time metrics for Kubernetes resources.
 - **Use Case**: Used for auto-scaling (Horizontal Pod Autoscaler) and real-time resource monitoring.
 - **Installation**: Installed via Helm as a Deployment.
+- user level data (how many times a user performed a specific activity on your app) To get that the developer of the applciations should write metric server(api). Prometheus using service discovery mechanism it scrapes the /metrics endpoint of payments, catalouge, etc.
 
+### **Database exporter**
+
+### Competetors 
+- nagios
+- influxDDb
+- Graphite
+Why commonly used?? Prometheus??
+because it is CNCF project, has strong community, lot of companies using prometheus as observability instead of cretaing a new metrics.
 
 ### 🧼 Step 5: Clean UP
 - **Uninstall helm chart**:
