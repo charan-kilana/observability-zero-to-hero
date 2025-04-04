@@ -177,7 +177,7 @@ kubectl port-forward service/alertmanager-operated -n monitoring 9093:9093
 # Monitoring Setup for Kubernetes
 
 This setup includes **Node Exporter**, **Kube-State Metrics**, and **Metrics Server** for monitoring Kubernetes clusters.
-
+prometheus scrapes every info and stores in TSDB (Time series data base)
 ### **Node Exporter**
 - **What is it?**: A Prometheus exporter that exposes hardware and OS-level metrics from nodes (e.g., CPU, memory, disk usage, network stats).
 - **Use Case**: Monitors node health and resource usage.
@@ -197,6 +197,7 @@ This setup includes **Node Exporter**, **Kube-State Metrics**, and **Metrics Ser
 - user level data (how many times a user performed a specific activity on your app) To get that the developer of the applciations should write metric server(api). Prometheus using service discovery mechanism it scrapes the /metrics endpoint of payments, catalouge, etc.
 
 ### **Database exporter**
+if you give port number of mysql it'll continously talk with database exporter and give data related to mysql to tsdb.
 
 ### Competetors 
 - nagios
