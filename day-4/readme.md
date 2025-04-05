@@ -113,6 +113,9 @@ kubectl apply -k kubernetes-manifest/
 ```bash
 ./test.sh <<LOAD_BALANCER_DNS_NAME>>
 ```
+-- Once Everything is done, Can you access in Prometheus dashboard? **definetly No**. 
+-- After instrumentation you should do service discovery. There will be multiple application on k8s cluster, so how does prometheus know which application it should fetch from? It should identify the application with help of service discovery.
+-- How service discovery is done?? You should deploy a custom resource or yaml file where you give necessary steps.
 
 ## 5) Configure Alertmanager
 - Review the Alertmanager configuration files located in `day-4/alerts-alertmanager-servicemonitor-manifest` but below is the brief overview
