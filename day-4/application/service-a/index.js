@@ -5,7 +5,10 @@ const express = require('express');
 const morgan = require('morgan');
 const pino = require('pino');
 const axios = require('axios');
+-- The above four are for building web application and HTTP related
 const promClient = require('prom-client');
+-- Used to collect custom metrics from your Node.js app (like request duration, memory usage).
+-- Example use: Expose an endpoint like /metrics that Prometheus scrapes.
 
 const app = express();
 
