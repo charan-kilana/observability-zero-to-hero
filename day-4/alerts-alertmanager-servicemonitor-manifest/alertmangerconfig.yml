@@ -25,7 +25,7 @@ spec:
     - to: YOUR_EMAIL_ID
       from: YOUR_EMAIL_ID
       sendResolved: false
-      smarthost: smtp.gmail.com:587
+      smarthost: smtp.gmail.com:587    #stmp server expects a password, so you need to configure a password.
       authUsername: YOUR_EMAIL_ID
       authIdentity: YOUR_EMAIL_ID
       authPassword:
