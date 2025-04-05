@@ -90,6 +90,8 @@ helm install elasticsearch \
 data is stored on persistent volumes.
 
 ### 6) Retrieve Elasticsearch Username & Password
+When fluentbit is forwaring to elastic search it should have authentication so we shoul have username and password.
+
 ```bash
 # for username
 kubectl get secrets --namespace=logging elasticsearch-master-credentials -ojsonpath='{.data.username}' | base64 -d
