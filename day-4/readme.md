@@ -1,6 +1,8 @@
 ## 🎛️ Instrumentation
 - Instrumentation refers to the process of adding monitoring capabilities to your applications, systems, or services.
 - This involves embedding/Writting code or using tools to collect metrics, logs, or traces that provide insights into how the system is performing.
+## Example
+- Say your DevOps team had setup: Prometheus, Grafana, EFK and Jaeger for your application but what if metrics, logs, traces are not there for your application which need to displayed on dashboards?? So the process of setting up all these is called instrumentation. 
 
 ## 🎯 Purpose of Instrumentation:
 - **Visibility**: It helps you gain visibility into the internal state of your applications and infrastructure.
