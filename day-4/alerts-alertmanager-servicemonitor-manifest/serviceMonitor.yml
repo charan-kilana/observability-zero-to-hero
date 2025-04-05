@@ -18,3 +18,4 @@ spec:
   namespaceSelector:
     matchNames:
       - dev
+# In the dev namesapce match the service, a-service and mounth to /metrics.
