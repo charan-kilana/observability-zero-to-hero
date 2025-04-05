@@ -62,6 +62,7 @@ ARN=$(aws iam get-role --role-name AmazonEKS_EBS_CSI_DriverRole --query 'Role.Ar
 - Command retrieves the ARN of the IAM role created for the EBS CSI controller service account.
 
 ### 3) Deploy EBS CSI Driver
+When your'e using PVC in cluster you need a driver to create a ebs in account i.e EBS CSI driver 
 ```bash
 eksctl create addon --cluster observability --name aws-ebs-csi-driver --version latest \
     --service-account-role-arn $ARN --force
