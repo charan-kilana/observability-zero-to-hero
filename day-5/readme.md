@@ -9,6 +9,10 @@
 - **Performance** Monitoring: Analyzing logs can help identify performance bottlenecks.
 - **Security**: Logs help in detecting unauthorized access or malicious activities.
 
+## Imagine a scenario where lot of application running on cluster and now there's some error related with few application like log4j or database connection error. 
+- Now you shouldn't go to every resource and check right, so we need to have a centralize logging system where all logs are collected/aggregated at once and simply you can search for log4j errors or database error.
+- you'll service(1,2,7,12) youv'e to work on DB error.
+
 ## 🛠️ Tools Available for Logging in Kubernetes
 - 🗂️ EFK Stack (Elasticsearch, Fluentbit, Kibana)
 - 🗂️ EFK Stack (Elasticsearch, FluentD, Kibana)
@@ -18,8 +22,10 @@
 ## 📦 EFK Stack (Elasticsearch, Fluentbit, Kibana)
 - EFK is a popular logging stack used to collect, store, and analyze logs in Kubernetes.
 - **Elasticsearch**: Stores and indexes log data for easy retrieval.
-- **Fluentbit**: A lightweight log forwarder that collects logs from different sources and sends them to Elasticsearch.
+- **Fluentbit**: A lightweight log forwarder that collects logs from different sources and sends them to Elasticsearch. deployed as deamonset on each node.
 - **Kibana**: A visualization tool that allows users to explore and analyze logs stored in Elasticsearch.
+
+Fluentbit reads logs from the nodes on the k8s cluster and fluentbit forwards to elastic search. You can create elasticsearch as a pv and take snapshot of ebs volumes everyday.  
 
 # 🏠 Architecture
 ![Project Architecture](images/architecture.gif)
