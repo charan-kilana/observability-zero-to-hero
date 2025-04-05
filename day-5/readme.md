@@ -27,6 +27,10 @@
 
 Fluentbit reads logs from the nodes on the k8s cluster and fluentbit forwards to elastic search. You can create elasticsearch as a pv and take snapshot of ebs volumes everyday.  
 
+**why not elk??**
+elastic search, logstash and kibana  
+Logstash has more rich features comapred to fluentbit.  You can advance filtering, advance labelling beofre forwarding to elasticsearch.  
+
 # 🏠 Architecture
 ![Project Architecture](images/architecture.gif)
 
