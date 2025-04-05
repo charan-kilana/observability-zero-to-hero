@@ -117,6 +117,33 @@ kubectl apply -k kubernetes-manifest/
 -- After instrumentation you should do service discovery. There will be multiple application on k8s cluster, so how does prometheus know which application it should fetch from? It should identify the application with help of service discovery.  
 -- How service discovery is done?? You should deploy a custom resource or yaml file where you give necessary steps.  
 
+# Background or Internal Requests
+
+Your Node.js application might be making internal HTTP requests to itself or to another service. These could be automated health checks, background jobs, or microservices communicating with each other.
+
+## Check for:
+
+### 1. Health Checks:
+Many cloud platforms, containers, or load balancers might send periodic health checks (e.g., `/health` or `/status` routes).
+
+- **Cloud platforms**: Services like AWS, Azure, and Google Cloud may send health checks to ensure that your app is running correctly.
+- **Containers**: If you’re running your app inside Docker or Kubernetes, health check probes could be sending periodic requests.
+- **Load balancers**: Load balancers might be configured to check your app’s health at regular intervals.
+
+### 2. Background Workers or Cron Jobs:
+If your app triggers any internal requests (e.g., background jobs or cron tasks), they may be incrementing the counter.
+
+- **Cron jobs**: Scheduled tasks in your app could be making HTTP requests as part of their operation.
+- **Background jobs**: These jobs (e.g., job queues, scheduled tasks, etc.) may be making requests to your app’s API, thereby incrementing the request counter.
+
+## What to Do:
+- **Check your app logs**: Look for any internal or automated HTTP requests being made.
+- **Inspect your health check configuration**: Ensure that health checks aren't contributing to the request count.
+- **Review background jobs or cron jobs**: If they are triggering internal requests, ensure that they are necessary or adjust how they're instrumented.
+
+By identifying and controlling these internal requests, you can more accurately track the external traffic to your application.
+
+
 ## 5) Configure Alertmanager
 - Review the Alertmanager configuration files located in `day-4/alerts-alertmanager-servicemonitor-manifest` but below is the brief overview
     - Before configuring Alertmanager, we need credentials to send emails. For this project, we are using Gmail, but any SMTP provider like AWS SES can be used. so please grab the credentials for that.
