@@ -48,6 +48,9 @@ eksctl create iamserviceaccount \
     --attach-policy-arn arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy \
     --approve
 ```
+**Why need IAM Role for Service Account??**
+Here we creating a ebs volume to communicate we create a iam role for service account.
+
 - This command creates an IAM role for the EBS CSI controller.
 - IAM role allows EBS CSI controller to interact with AWS resources, specifically for managing EBS volumes in the Kubernetes cluster.
 - We will attach the Role with service account
