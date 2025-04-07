@@ -51,7 +51,7 @@ You write instrumentation in your code using OTel’s APIs, then export the data
 const client = require('prom-client');
 const counter = new client.Counter({ name: 'http_requests_total', help: 'HTTP requests' });
 counter.inc();
-
+```
 # OpenTelemetry Instrumentation:
 '''bash
 const { MeterProvider } = require('@opentelemetry/sdk-metrics');
@@ -108,3 +108,4 @@ counter.add(1);
 
 const histogram = meter.createHistogram('checkout_duration_ms');
 histogram.record(350); // 350ms
+```
