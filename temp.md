@@ -65,3 +65,46 @@ const meter = meterProvider.getMeter('my-app');
 const counter = meter.createCounter('orders_placed');
 counter.add(1);
 '''
+
+# 🍔 Observability in a Food Delivery App — Prometheus vs OpenTelemetry
+
+## 🧠 Imagine This: You Have a Food Delivery App
+
+You’ve deployed it on Kubernetes, and you want to **monitor everything** — from the infrastructure to the actual app logic.
+
+Let’s break down how Prometheus exporters and OpenTelemetry help — and where each fits in.
+
+---
+
+## ⚙️ Scenario 1: Using Prometheus Exporters (Infrastructure Level)
+
+You install:
+- `node_exporter` → Monitors CPU, memory, disk, etc.
+- `kube-state-metrics` → Monitors Kubernetes objects like pods, deployments, and nodes
+
+🧾 **What You Get:**
+- CPU: 65%
+- RAM: 4GB used
+- Disk: 70% full
+- Pod status: Running
+- Deployment replicas: 3
+
+✅ This tells you **how your platform is doing**
+
+❌ But it **cannot** tell you:
+- How many people placed orders
+- What’s the API response time for `/checkout`
+- Where errors happened across services
+
+---
+
+## 🧠 Scenario 2: Using OpenTelemetry (Application Level)
+
+Now you go into your **application code** and do this:
+
+```js
+const counter = meter.createCounter('orders_placed');
+counter.add(1);
+
+const histogram = meter.createHistogram('checkout_duration_ms');
+histogram.record(350); // 350ms
